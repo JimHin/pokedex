@@ -15,12 +15,31 @@ Servez vous de phpmyadmin par exemple.
 
 A la ligne 89 du fichier Home.vue vous adapterez l'url utilisé par axios selon l'environnement dans lequel vous avez placé le répertoire "api_pokedex"
 
-            axios
-                .get("http://localhost:8888/API_pokedex/pokemons") <-- url à adapter selon le nom de domaine.
-                .then((response) => (this.infos = response.data));
+        axios
+            .get("http://localhost:8888/API_pokedex/pokemons") <-- url à adapter selon le nom de domaine.
+            .then((response) => (this.infos = response.data));
 
 ## Installation des dépendances
 
-Un petit coup de 
+Ouvrez le répertoire projet dans votre edi. Dans le terminal, à la racine du projet, un petit coup de 
 
-            npm install
+        npm install
+
+## Lancez le projet dans le lab ionic
+
+    ionic serve --lab
+
+Ici pas de problème, l'application tourne bien, l'api répond et le front s'affiche.
+
+## Lancez le projet avec capacitor sur un émulateur android
+
+    ionic capacitor run android -l --host=Votre_Adresse_ip
+
+    ATTENTION !!! l'emulateur ou le device android que vous utilisez doitêtre connecté sur le même réseau.
+    Il est à noter que j'ai opté pour Vue JS et que cordova ne prends pas en charge le build avec VueJS. ?!!!
+    Si j'avais su ... snifff
+
+## Bugs Connus
+
+Une fois le build de l'application effectué, ca tourne bien sur le système mais un problème de connection à l'API ne se fait pas et aucune données ni contenu ne s'affiche
+Je cherche encore...
